@@ -1,2 +1,2 @@
-print("alara")
-print("fdspmfmposd")
+def pull(lst: list):
+    
