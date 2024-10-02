@@ -1,3 +1,8 @@
+#<<<<<<< emirhan
+def cry_button():
+    print("üghürü")
+    
+=======
 #<<<<<<< alara
 def pull(lst: list):
     pass
