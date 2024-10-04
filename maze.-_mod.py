@@ -18,7 +18,7 @@ labirent = np.array([
 
 # Parametreler
 q_table = np.zeros((10, 10, 4))  # 10x10'luk her hücre için dört hareket (yukarı, aşağı, sol, sağ)
-alpha = 0.1  # Öğrenme oranı
+alpha = 0.6  # Öğrenme oranı
 gamma = 0.9  # Gelecek ödüllere verilen önem
 epsilon = 0.1  # Keşfetme oranı
 
@@ -44,7 +44,7 @@ def valid_action(state, action):
     return False
 
 # Ajanın labirenti çözme fonksiyonu
-def train_agent(episodes=1000):
+def train_agent(episodes=25):
     for episode in range(episodes):
         state = (0, 0)  # Başlangıç noktası
         while labirent[state] != 1:  # Hedefe ulaşana kadar
