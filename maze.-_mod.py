@@ -1,18 +1,19 @@
 import numpy as np
 import random
+import time
 
 # Daha büyük ve zor labirent ortamı: -1 = Engel, 0 = Boş alan, 1 = Hedef
 labirent = np.array([
-    [ 0, -1,  0,  0, -1,  0,  0, -1,  0,  0],
-    [ 0, -1,  0, -1, -1, -1,  0, -1, -1,  0],
-    [ 0,  0,  0,  0,  0, -1,  0,  0, -1,  0],
-    [-1, -1, -1, -1,  0, -1, -1, -1, -1,  0],
-    [ 0,  0,  0, -1,  0,  0,  0, -1,  0,  1],
-    [-1, -1,  0, -1, -1, -1,  0, -1, -1, -1],
-    [ 0,  0,  0,  0,  0,  0,  0,  0,  0, -1],
-    [ 0, -1, -1, -1, -1, -1, -1, -1, -1,  0],
     [ 0,  0,  0,  0, -1,  0,  0,  0,  0,  0],
-    [-1, -1, -1,  0, -1, -1, -1, -1, -1, -1],
+    [ 0, -1, -1,  0, -1,  0, -1, -1, -1,  0],
+    [ 0, -1,  0,  0,  0,  0, -1,  0,  0,  0],
+    [ 0,  0,  0, -1, -1, -1, -1,  0, -1,  0],
+    [ 0, -1,  0, -1,  0,  0,  0,  0, -1,  0],
+    [ 0,  0,  0,  0, -1, -1, -1,  0,  0,  0],
+    [ 0, -1, -1, -1,  0,  0, -1, -1, -1,  0],
+    [ 0,  0,  0,  0,  0, -1,  0,  0,  0,  0],
+    [-1, -1, -1, -1,  0, -1, -1, -1, -1,  0],
+    [ 0,  0,  0,  0,  0,  0,  0,  0,  0,  1],
 ])
 
 # Parametreler
@@ -99,5 +100,17 @@ def solve_maze():
         state = (state[0] + action[0], state[1] + action[1])
         path.append(state)
     return path
+
+# Measure training time
+start_time = time.time()
+train_agent()
+end_time = time.time()
+print("Training time: {:.2f} seconds".format(end_time - start_time))
+
+# Measure solving time
+start_time = time.time()
+solution_path = solve_maze()
+end_time = time.time()
+print("Solving time: {:.2f} seconds".format(end_time - start_time))
 
 print("Çözüm yolu:", solve_maze())
