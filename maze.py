@@ -4,7 +4,7 @@ import random
 # Labirent ortamı: -1 = Engel, 0 = Boş alan, 1 = Hedef
 labirent = np.array([
     [ 0,  0,  0, -1,  0],
-    [ 0, -1,  0, -1,  0],
+    [-1, -1,  0, -1,  0],
     [ 0,  0,  0,  0,  0],
     [-1, -1, -1, -1,  0],
     [ 0,  0,  0,  0,  1],
