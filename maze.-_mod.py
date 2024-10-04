@@ -17,7 +17,7 @@ labirent = np.array([
 
 # Parametreler
 q_table = np.zeros((10, 10, 4))  # 10x10'luk her hücre için dört hareket (yukarı, aşağı, sol, sağ)
-alpha = 0.1  # Öğrenme oranı
+alpha = 0.5 #oranı
 gamma = 0.9  # Gelecek ödüllere verilen önem
 epsilon = 0.1  # Keşfetme oranı
 
